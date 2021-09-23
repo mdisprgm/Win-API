@@ -30,7 +30,7 @@ int APIENTRY WinMain(HINSTANCE hInstance/*프로그램 인스턴스 핸들*/, HINSTANCE hP
 	WndClass.style = CS_HREDRAW | CS_VREDRAW;//스타일, HREDRAW와 VREDRAW는 각각 수평, 수직 크기가 변동되면 윈도우를 다시 그린다는 매크로이다.
 	RegisterClass(&WndClass);//윈도우 클래스를 등록하여 사용할 수 있게 해준다. 정확히 어디 등록한다는 건지..
 
-	hWnd = CreateWindow(lpszClass, "HelloWorld", WS_OVERLAPPEDWINDOW, 860, 340, 800, 500, NULL, (HMENU)NULL, hInstance, NULL);//클래스 이름, 타이틀 이름, 크기, 위치 등등 정보를 인자로 넘긴다. 아직 다 이해하지 못했다.
+	hWnd = CreateWindow(lpszClass, "HelloWorld", WS_VSCROLL | WS_HSCROLL | WS_SYSMENU | WS_MAXIMIZEBOX , 860, 340, 800, 500, NULL, (HMENU)NULL, hInstance, NULL);//클래스 이름, 타이틀 이름, 크기, 위치 등등 정보를 인자로 넘긴다. 아직 다 이해하지 못했다.
 	ShowWindow(hWnd, nCmdShow);//창을 띄운다, 핸들과 형태를 지정하는데 형태는 nCmdShow를 그냥 넣어준다.
 
 	while (GetMessage(&Message, 0, 0, 0)) {//메시지 루프
